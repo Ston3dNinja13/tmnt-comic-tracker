@@ -1,0 +1,42 @@
+<svg width="600" height="900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a9641;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a5c20;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="900" fill="url(#bgGradient)" />
+  
+  <!-- Border -->
+  <rect x="20" y="20" width="560" height="860" fill="none" stroke="#000" stroke-width="10" />
+  
+  <!-- TMNT Logo text -->
+  <text x="300" y="150" font-family="Impact, sans-serif" font-size="50" fill="#fff" text-anchor="middle">TEENAGE MUTANT</text>
+  <text x="300" y="220" font-family="Impact, sans-serif" font-size="50" fill="#fff" text-anchor="middle">NINJA TURTLES</text>
+  
+  <!-- Turtle logo -->
+  <circle cx="300" cy="450" r="150" fill="#ffcc00" />
+  <circle cx="300" cy="450" r="140" fill="url(#bgGradient)" />
+  
+  <!-- Turtle shell pattern -->
+  <circle cx="300" cy="450" r="120" fill="none" stroke="#ffcc00" stroke-width="5" />
+  <circle cx="300" cy="450" r="90" fill="none" stroke="#ffcc00" stroke-width="5" />
+  <circle cx="300" cy="450" r="60" fill="none" stroke="#ffcc00" stroke-width="5" />
+  <circle cx="300" cy="450" r="30" fill="none" stroke="#ffcc00" stroke-width="5" />
+  
+  <!-- Diagonal lines for shell pattern -->
+  <line x1="180" y1="330" x2="420" y2="570" stroke="#ffcc00" stroke-width="5" />
+  <line x1="180" y1="570" x2="420" y2="330" stroke="#ffcc00" stroke-width="5" />
+  <line x1="300" y1="300" x2="300" y2="600" stroke="#ffcc00" stroke-width="5" />
+  <line x1="150" y1="450" x2="450" y2="450" stroke="#ffcc00" stroke-width="5" />
+  
+  <!-- Price Tracker text -->
+  <text x="300" y="700" font-family="Impact, sans-serif" font-size="60" fill="#ffcc00" text-anchor="middle">PRICE TRACKER</text>
+  
+  <!-- Comic book price tag -->
+  <rect x="150" y="750" width="300" height="80" rx="10" fill="#ffcc00" />
+  <text x="300" y="805" font-family="Impact, sans-serif" font-size="40" fill="#1a9641" text-anchor="middle">$LOWEST PRICE$</text>
+</svg>

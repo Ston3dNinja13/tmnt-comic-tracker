@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 240, 240, 240;
+  --tmnt-green: 26, 150, 65;
+  --tmnt-yellow: 255, 204, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.tmnt-bg-green {
+  background-color: rgb(var(--tmnt-green));
+}
+
+.tmnt-text-green {
+  color: rgb(var(--tmnt-green));
+}
+
+.tmnt-bg-yellow {
+  background-color: rgb(var(--tmnt-yellow));
+}
+
+.tmnt-text-yellow {
+  color: rgb(var(--tmnt-yellow));
+}
+
+/* Custom animations */
+@keyframes turtle-fade {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.turtle-fade-in {
+  animation: turtle-fade 0.5s ease-out forwards;
+}
+
+/* Price change indicators */
+.price-up {
+  color: #ef4444;
+}
+
+.price-down {
+  color: #10b981;
+}
+
+.price-same {
+  color: #6b7280;
+}
