@@ -1,0 +1,761 @@
+/* Base styles */
+:root {
+    --tmnt-green: #1a9641;
+    --tmnt-green-light: #4cb06a;
+    --tmnt-green-dark: #0a5c20;
+    --tmnt-yellow: #ffcc00;
+    --tmnt-yellow-light: #ffdb4d;
+    --tmnt-yellow-dark: #cc9900;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --white: #ffffff;
+    --red-500: #ef4444;
+    --green-500: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    color: var(--gray-800);
+    background-color: var(--gray-100);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header styles */
+.header {
+    background-color: var(--tmnt-green);
+    color: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .logo-container {
+        margin-bottom: 0;
+    }
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    margin-right: 0.75rem;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--tmnt-yellow);
+}
+
+/* Main content styles */
+.main-content {
+    padding: 2rem 0;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .search-container {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .search-box {
+        flex-direction: row;
+        margin-bottom: 0;
+        width: auto;
+    }
+}
+
+.search-box input, .search-box select {
+    padding: 0.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.search-box input {
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+/* Button styles */
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--tmnt-green);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--tmnt-green-dark);
+}
+
+.btn-secondary {
+    background-color: var(--tmnt-yellow);
+    color: var(--gray-800);
+}
+
+.btn-secondary:hover {
+    background-color: var(--tmnt-yellow-dark);
+}
+
+/* Comic card styles */
+.comic-card {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s;
+}
+
+.comic-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.comic-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .comic-card-content {
+        flex-direction: row;
+    }
+}
+
+.comic-cover {
+    position: relative;
+    width: 100%;
+    height: 250px;
+}
+
+@media (min-width: 768px) {
+    .comic-cover {
+        width: 33.333%;
+        height: auto;
+    }
+}
+
+.comic-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comic-cover .buy-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--tmnt-green);
+    color: var(--white);
+    text-align: center;
+    padding: 0.5rem;
+    opacity: 0.9;
+}
+
+.comic-details {
+    padding: 1rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .comic-details {
+        width: 66.666%;
+    }
+}
+
+.comic-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--tmnt-green-dark);
+    margin-bottom: 0.25rem;
+}
+
+.comic-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.comic-title a:hover {
+    text-decoration: underline;
+}
+
+.comic-series {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.price-box {
+    flex: 1;
+}
+
+.price-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.price-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.price-date {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+.price-change {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.price-up {
+    background-color: var(--red-500);
+}
+
+.price-down {
+    background-color: var(--green-500);
+}
+
+.price-same {
+    background-color: var(--gray-500);
+}
+
+.comic-source {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.source-info {
+    font-size: 0.875rem;
+}
+
+.buy-button {
+    background-color: var(--tmnt-green);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: var(--tmnt-green-dark);
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--tmnt-green);
+    color: var(--white);
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+    }
+}
+
+.footer-info {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .footer-info {
+        margin-bottom: 0;
+    }
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--tmnt-yellow);
+}
+
+.footer-note {
+    text-align: center;
+    font-size: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Form styles for add-comic.html */
+.form-container {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--tmnt-green-dark);
+    margin-bottom: 1.5rem;
+}
+
+.form-description {
+    margin-bottom: 1.5rem;
+    color: var(--gray-700);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.25rem;
+}
+
+.form-input, .form-textarea, .form-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--tmnt-green);
+    box-shadow: 0 0 0 2px rgba(26, 150, 65, 0.2);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.error-message {
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #b91c1c;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+/* About page styles */
+.about-container {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+    }
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-sidebar {
+    flex: 1;
+}
+
+.about-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--tmnt-green-dark);
+    margin-bottom: 1.5rem;
+}
+
+.about-section {
+    margin-bottom: 1.5rem;
+}
+
+.about-section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--tmnt-green);
+    margin-bottom: 0.75rem;
+}
+
+.about-list {
+    list-style-position: inside;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.about-list li {
+    margin-bottom: 0.5rem;
+}
+
+.about-cta {
+    margin-top: 1.5rem;
+}
+
+.about-logo {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.fun-fact {
+    background-color: var(--gray-100);
+    border: 1px solid var(--tmnt-green-light);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+
+.fun-fact-title {
+    font-weight: 700;
+    color: var(--tmnt-green-dark);
+    margin-bottom: 0.5rem;
+}
+
+.fun-fact-text {
+    font-size: 0.875rem;
+}
+
+/* Comic detail page styles */
+.comic-detail-container {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.comic-detail-content {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .comic-detail-content {
+        flex-direction: row;
+    }
+}
+
+.comic-detail-cover {
+    width: 100%;
+    height: 400px;
+}
+
+@media (min-width: 768px) {
+    .comic-detail-cover {
+        width: 33.333%;
+        height: auto;
+    }
+}
+
+.comic-detail-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comic-detail-info {
+    padding: 1.5rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .comic-detail-info {
+        width: 66.666%;
+    }
+}
+
+.comic-detail-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--tmnt-green-dark);
+    margin-bottom: 0.5rem;
+}
+
+.comic-detail-meta {
+    margin-top: 0.5rem;
+    color: var(--gray-600);
+}
+
+.comic-detail-meta p {
+    margin-bottom: 0.25rem;
+}
+
+.comic-detail-meta span {
+    font-weight: 600;
+}
+
+.comic-detail-description {
+    margin-top: 1rem;
+}
+
+.comic-detail-description h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--tmnt-green);
+    margin-bottom: 0.5rem;
+}
+
+.current-price-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: var(--gray-50);
+    border: 1px solid var(--tmnt-green-light);
+    border-radius: 0.5rem;
+}
+
+.current-price-box h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--tmnt-green);
+    margin-bottom: 0.5rem;
+}
+
+.current-price-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current-price-info p {
+    margin-bottom: 0.25rem;
+}
+
+.current-price-value {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--tmnt-green-dark);
+}
+
+.price-history-chart {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.price-history-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--tmnt-green-dark);
+    margin-bottom: 1rem;
+}
+
+.chart-container {
+    height: 300px;
+    margin-bottom: 1.5rem;
+}
+
+.price-history-details {
+    margin-top: 1rem;
+}
+
+.price-history-details h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.price-history-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .price-history-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.price-history-card {
+    border: 1px solid var(--gray-200);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+}
+
+.price-history-card h5 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.price-history-card .current {
+    color: var(--tmnt-green);
+}
+
+.price-history-card .previous {
+    color: var(--tmnt-yellow-dark);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--tmnt-green);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+
+.back-link:hover {
+    background-color: var(--tmnt-green-dark);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}

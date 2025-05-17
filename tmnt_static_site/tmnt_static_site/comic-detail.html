@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Detail - TMNT Comic Price Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="images/tmnt-logo.svg" alt="TMNT Logo" class="logo">
+                <h1 class="site-title">TMNT Comic Price Tracker</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="add-comic.html">Add Comic</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <div class="comic-detail-container">
+            <div class="comic-detail-content">
+                <div class="comic-detail-cover">
+                    <img id="comic-cover" src="images/tmnt-default-cover.svg" alt="Comic Cover">
+                </div>
+                <div class="comic-detail-info">
+                    <h1 id="comic-title" class="comic-detail-title">Comic Title</h1>
+                    
+                    <div class="comic-detail-meta">
+                        <p>Series: <span id="comic-series">Series 1</span></p>
+                        <p>Publisher: <span id="comic-publisher">Publisher</span></p>
+                        <p>Year: <span id="comic-year">Year</span></p>
+                    </div>
+                    
+                    <div class="comic-detail-description">
+                        <h2>Description</h2>
+                        <p id="comic-description">Comic description goes here.</p>
+                    </div>
+                    
+                    <div class="current-price-box">
+                        <h2>Current Lowest Price</h2>
+                        <div class="current-price-content">
+                            <div class="current-price-info">
+                                <p>Found on <span id="price-date">Date</span></p>
+                                <p>Source: <span id="price-source">Source</span></p>
+                                <p>Condition: <span id="price-condition">Condition</span></p>
+                            </div>
+                            <div class="current-price-value" id="current-price">$0.00</div>
+                        </div>
+                        <div class="buy-button-container" style="margin-top: 1rem; text-align: right;">
+                            <a id="buy-button" href="#" target="_blank" class="buy-button">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="price-history-chart">
+            <h2 class="price-history-title">Price History</h2>
+            <div id="chart-container" class="chart-container">
+                <!-- Chart will be rendered here by JavaScript -->
+            </div>
+            
+            <div class="price-history-details">
+                <h4>Price Details</h4>
+                <div class="price-history-grid">
+                    <div class="price-history-card current-price-card">
+                        <h5 class="current">Current Price</h5>
+                        <p>Price: <span id="current-price-value">$0.00</span></p>
+                        <p>Date: <span id="current-price-date">Date</span></p>
+                        <p>Source: <span id="current-price-source">Source</span></p>
+                        <p>Condition: <span id="current-price-condition">Condition</span></p>
+                    </div>
+                    
+                    <div class="price-history-card previous-price-card">
+                        <h5 class="previous">Previous Price</h5>
+                        <p>Price: <span id="previous-price-value">$0.00</span></p>
+                        <p>Date: <span id="previous-price-date">Date</span></p>
+                        <p>Source: <span id="previous-price-source">Source</span></p>
+                        <p>Condition: <span id="previous-price-condition">Condition</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-link">Back to All Comics</a>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 TMNT Comic Price Tracker. All rights reserved.</p>
+                    <p class="disclaimer">Teenage Mutant Ninja Turtles and all related characters are property of their respective owners.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="footer-note">
+                <p>This website tracks comic book prices from various marketplaces and is updated daily. Prices shown are the lowest available at the time of checking.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadComicDetail();
+        });
+    </script>
+</body>
+</html>

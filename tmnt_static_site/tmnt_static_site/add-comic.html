@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Comic - TMNT Comic Price Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="images/tmnt-logo.svg" alt="TMNT Logo" class="logo">
+                <h1 class="site-title">TMNT Comic Price Tracker</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="add-comic.html" class="active">Add Comic</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <h1 class="page-title">Add New Comic to Track</h1>
+        
+        <div class="form-container">
+            <p class="form-description">
+                Use the form below to add a new comic book to track. Our system will automatically search for the lowest price
+                across various marketplaces and update it daily.
+            </p>
+            
+            <form id="add-comic-form" class="add-comic-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="title" class="form-label">Title *</label>
+                        <input type="text" id="title" class="form-input" placeholder="Comic title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="issueNumber" class="form-label">Issue Number *</label>
+                        <input type="number" id="issueNumber" class="form-input" placeholder="1" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="series" class="form-label">Series *</label>
+                        <input type="text" id="series" class="form-input" placeholder="Series name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="publisher" class="form-label">Publisher *</label>
+                        <input type="text" id="publisher" class="form-input" placeholder="Publisher name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="year" class="form-label">Year *</label>
+                        <input type="number" id="year" class="form-input" placeholder="1984" min="1900" max="2025" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="imageUrl" class="form-label">Cover Image URL</label>
+                        <input type="url" id="imageUrl" class="form-input" placeholder="https://example.com/comic-cover.jpg">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" class="form-textarea" rows="3" placeholder="Brief description of the comic"></textarea>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary">Add Comic</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 TMNT Comic Price Tracker. All rights reserved.</p>
+                    <p class="disclaimer">Teenage Mutant Ninja Turtles and all related characters are property of their respective owners.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="footer-note">
+                <p>This website tracks comic book prices from various marketplaces and is updated daily. Prices shown are the lowest available at the time of checking.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
